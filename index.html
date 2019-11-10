@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Practice Q</title>
+    <!--<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>-->
+    <meta charset="utf-8">
+    <!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1"> -->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" type="image/png" href="css/qnt.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="css/q.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="css/q.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="css/q.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="css/q.png" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- script src="//code.jquery.com/jquery-1.11.1.min.js"></script -->
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!--    <script type="text/javascript" src="js/data.js"></script> -->
+    <!--    <script type="text/javascript" src="js/iscroll.js"></script> -->
+    <!--     <script type="text/javascript" src="js/fastclick.js"></script> -->
+    <script type="text/javascript" src="js/hammer.min.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body >
+    <script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response, callerId) {
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI(response, callerId);
+    } else if (response.status === 'not_authorized') {
+     FB.login(function(response) {
+          if (response.authResponse){
+          	      testAPI(response, callerId);
+          } else {
+            console.log('Auth cancelled.')
+          }
+        }, { scope: 'email' });
+      // The person is logged into Facebook, but not your app.
+//       document.getElementById('status').innerHTML = 'Please log ' +  'into this app.';
+    } else {
+     FB.login(function(response) {
+         if (response.authResponse){
+         	      testAPI(response, callerId);
+
+           } else {
+             console.log('Auth cancelled.')
+           }
+        }, { scope: 'email' });
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+//       document.getElementById('status').innerHTML = 'Please log ' +     'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState(callerID) {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response, callerID);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '345466775809294',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.8' // use graph api version 2.8
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+  //  statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI(data, callerId) {
+    FB.api('/'+data.authResponse.userID,  { locale: 'en_US', fields: 'name, email, picture' }, function(response) {
+      if (callerId === 'btnCreateUserFacebook'){
+      	  facebookRegister(response, data.authResponse.accessToken);  
+      }
+      else{
+	      facebookLogin(response, data.authResponse.accessToken);  
+      }
+    //   document.getElementById('status').innerHTML =
+//         'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+</script>
+    
+    </script>
+    <div class='header'>
+        <div class=' questions logo'><img src='css/q.svg' height='40'> </div>
+        <!-- <div class='questions'><i class="fa fa-th-large " aria-hidden="true"></i></div> -->
+        <div class='backIcon'><i class="fa fa-chevron-left " aria-hidden="true"></i></div>
+        <div class='play'><i class="fa fa-play" aria-hidden="true"></i></div>
+        <div id='userIcon' class='userIcon'><i id='iconSlider' class="fa fa-sliders" aria-hidden="true"></i></div>
+    </div>
+    <div id="searchContainer"><input id="search" type="search" placeholder="SEARCH"></div>
+
+
+    <div class='loginContainer'>
+        <div class='login'>
+            <div class='userIconLogin'><i class="fa fa-user-circle" aria-hidden="true"></i> </div>
+            <div style='margin-bottom: 10px;'>
+                <input id='lemail' type="text" placeholder="E-MAIL">
+            </div>
+            <div>
+                <input id='lpassword' type="password" placeholder="PASSWORD">
+            </div>
+            <div id='btnLogin' class='loginBtn' style='background-color:#000; color:#fff;'>LOGIN</div>
+            <div style='margin-top:23px; font-size:x-large;'>OR</div>
+<!--             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button> -->
+            <div id='btnFacebook' class='loginBtn' style='background-color:#4267B2; color:#fff;' onClick='checkLoginState()'>FACEBOOK LOGIN</div><br>
+            <div id='btnResetPwd' class='loginBtn' style='display: block !important; border: 1px solid #000; margin-top: 30px;'>RESET MY PASSWORD</div>
+        </div>
+    </div>
+
+
+    <form style='display:none' action="services/createBattle.php" method="post" id="formContent" enctype="multipart/form-data">
+        <input type="file" name="fileToUpload" id="fileToUpload" onchange="readURL(this);" />
+        <input id="inputSubmitImg" type="submit" value="Upload Image" name="submit" />
+    </form>
+
+		<div class='resetPwdContainer'>
+			<div class='resetPwd'>
+	      	  <input id='resetEmail' type="text" placeholder="YOUR E-MAIL">
+              <div id='btnResetNow' class='loginBtn' style='background-color:#000; color:#fff;'>RESET PASSWORD</div>
+			  <h1 id='resetMsg'><i style="FONT-SIZE: 70PX;"class="fa fa-envelope-o" aria-hidden="true"></i><BR><BR>CHECK YOUR E-MAIL FOR NEXT STEP</h1> 
+			</div>
+			<div class='newPassword'>
+				<input id='newPassword' type="password" placeholder="NEW PASSWORD"><br><br>
+				<input id='repeatNewpassword' type="password" placeholder="REPEAT PASSWORD"><br><br>
+				<div id='btnResetNewPassword' class='loginBtn' style='background-color:#000; color:#fff;'>RESET PASSWORD</div>
+			</div>
+			<div class='tokenError'>
+				<h1><i style='color: #d8ce3d;' class="fa fa-exclamation-triangle" aria-hidden="true"></i> OUPS! <br><br>TOKEN INVALID OR EXPIRED!</h1>
+				<div id='newToken' class='loginBtn' style='background-color:#000; color:#fff;'>SEND ME A NEW ONE</div>
+				<div id='nevermind' class='loginBtn' style='border:1px solid black;'>NEVER MIND!</div>
+			</div>
+		</div>
+
+    <div class='registerContainer'>
+        <div class='register'>
+            <div class='reg'>
+                <div class="userIconLogin">
+                    <img id="ShowImage" style='display: none;border-radius: 100px; height: 70px;' src="#" alt="" />
+                    <i id='loginAnoIcon' style="color:#ddd; cursor:pointer" class="fa fa-user-circle" aria-hidden="true"></i>
+                    <i class="fa fa-camera" aria-hidden="true" style="font-size: 20px;color: gray; cursor:pointer; vertical-align: middle;margin-left: -38px;margin-top: 29px;"> </i>
+                </div>
+
+                <div style='margin-bottom: 10px;'>
+                    <input id='regUser' type="text" placeholder="USER NAME">
+                </div>
+                <div style='margin-bottom: 10px;'>
+                    <input id='regEmail' type="text" placeholder="E-MAIL">
+                </div>
+              
+                <div>
+                    <input id='regPassword' type="password" placeholder="PASSWORD">
+                </div>
+            </div>
+            <div id='swtiches' style='z-index:999999'>
+                <div style='margin-top:23px; font-size:x-large;'>QUESTION SETTINGS</div>
+                <div id='switchRandom' class='swtichContainer'>
+                    <div id='randomOn' class='switchBtn switchOn'><i class="fa fa-random" aria-hidden="true"></i></div>
+                    <div id='randomOff' class='switchBtn'>OFF</div>
+                </div>
+                <div id='swtichInfinit' class='swtichContainer'>
+                    <div id='infinitOn' class="switchBtn switchOn" style="padding: 0px 9px;"><span style="font-size: 40px; padding: 0px;">∞</span></div>
+                    <div id='infinitOff' class='switchBtn'>OFF</div>
+                </div>
+                <div id='switchBackground' class="swtichContainer">
+                    <div id='backgroundOn' class="switchBtn switchOn" style="padding: 9px 0px;width: 160px;"><span style="font-size:large;padding: 0;">BACK COLOR</span></div>
+                    <div id='backgroundOff' class="switchBtn">OFF</div>
+                </div>
+            </div>
+            <div id='anonyme'>
+                <div style='margin-top: 27px; font-size: MEDIUM;  MAX-WIDTH: 300PX; margin: auto;padding-top: 20px;'>TO PROTECT YOUR QUESTIONS AND SAVE YOUR SETTINGS</div>
+                <div id='navToLogin' class='loginBtn' style='background-color:#000; color:#fff;'>LOGIN</div>
+                <div id='btnCreateUserFacebook' type='create' class='loginBtn' style='background-color:#4267B2; color:#fff;' onClick='checkLoginState(this.id)'>FACEBOOK LOGIN</div>
+                <div style='margin-top:23px; font-size:x-large;'>OR</div>
+                <div id='navToRegister' class='loginBtn' style='border: 1px solid #000;'>REGISTER</div>
+            </div>
+            <div id='reg' class='reg'>
+                <div id='btnCreateUser' type='create' class='loginBtn' style='background-color:#000; color:#fff;'>REGISTER</div>
+                <div id='logout' class='loginBtn' style='border: 1px solid #000; margin-top: 30px;'>LOGOUT</div>
+            </div>
+            <div>
+                <div id='btnResetPwd' class='loginBtn' style='border: 1px solid #000; margin-top: 30px;'>RESET MY PASSWORD</div>
+            </div>
+        </div>
+    </div>
+    <div id='leftPanel'>
+        <div class='addQHeader'>
+            <input id='inputQTitle' class='inputQTitle' type="text" placeholder='ADD TITLE' required>
+            <div class='addQBloc'>
+                <div class="addAQ">ADD QUESTION</div>
+                <!-- 
+	<input id='inputQ' class='addQText'  type="text" placeholder='ADD QUESTION'>
+    	    	<span class='fa fa-plus addQ'></span>
+ -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Message to be Displayed when out of questions -->
+    <!-- 
+<div id="end" class="hide">
+        <h1>You have reached the end of questions</h1>
+        <h2>Hopefully you will be a little more ready for your YC interview,good luck!:)</h2>
+    </div>
+   
+ -->
+    <div class='delPopUp'>
+        <div class='popupGrp'>
+            <div style="font-size: 29px;  font-weight: bold; padding: 25px 0;">CONFIRM DELETION</div>
+            <div id='confirmDel' class='btnPopUp' style='float:left'>YES</div>
+            <div id='cancelDel' style='float:right' class='btnPopUp'>NO</div>
+        </div>
+    </div>
+    <div class='createQForm'>
+        <div qId='' qSetId='' class='qFormInput'>
+            <textarea id='inputQ' class='addQText' type="text" placeholder='YOUR NEW QUESTION'></textarea>
+            <select class='selectTime'>
+					  <option value="15">15 seconds</option>
+					  <option value="30">30 seconds</option>
+					  <option value="45">45 seconds</option>
+					  <option value="60">60 seconds</option>
+				</select>
+            <!-- 
+<input id='inputTime' class='addQTime'  type="text" placeholder='QUESTION' value='30'>
+	    		<span style="font-size: x-large;"> SECONDS</span>
+ -->
+        </div>
+        <div class="footer">
+            <div id='save' class='btnFooter' style='background-color:#8BC34A; color:white; font-size:48px'><i class="fa fa-check" aria-hidden="true"></i></div>
+            <div id='delete' class='btnFooter' style='font-size:48px'><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+        </div>
+    </div>
+    <div class='qGrid'></div>
+    <div class='qRun'>
+        <!-- Question Display --->
+        <div id="question">&nbsp;</div>
+        <div class="endContainer" >
+
+                <h1>QUESTION SET COMPLETED!!</h1>
+                <i class="fa fa-trophy fa-5x" style="color: #c5b358; font-size:8em;"></i>
+                <h1 style='letter-space:2px'>CONGRATULATION!!</h1>
+
+
+        </div>
+        <!-- Timer -->
+        <div id="timer">NO QUESTIONS</div>
+        <div class="footer" style='font-size:150%'>
+            <div id='resetTime' class='btnFooter' style='font-size:48px'><i class="fa fa-history" aria-hidden="true"></i></div>
+            <div id='nextQ' class='btnFooter' style='font-size:48px'><i class="fa fa-step-forward" aria-hidden="true"></i></div>
+        </div>
+    </div>
+
+	<div class='toast'>
+		<div class='message' style='padding-top: 14px;'></div>
+	</div>
+	<div class='aboutContainer'>
+		<div class='aboutTitle'>
+			ABOUT US
+		</div>
+		<div class='aboutText'>
+			PracticeQ helps you practicing answering questions. You can create your own set of questions or use the one created by others. <br><br>
+			<i style="padding:0px 45px;" class="fa fa-random" aria-hidden="true"></i> <span>Set it on to get questions asked randomly</span> <br>
+			<span style="font-size: 30px; padding: 0px 44px;">∞</span> <span>Set it on to get question set restarted infinitely</span><br> 
+			<span style="line-height: 2;font-size:medium; padding: 0; font-weight: bold;">BACK COLOR</span> <span> Set it on to get remaining time background color notificaiton</span>
+<p> To request a new feature, report a bug or communicate with us simply click the email icon below. </p> 
+		</div>
+		<br>
+		
+		<div class='social'>
+			<a href='https://www.facebook.com/practiceq/' target='_blank'><i class="fa fa-facebook" style='margin-right: 35px;' aria-hidden="true"></i></a>
+			<a href='https://twitter.com/practiceqapp' target='_blank'> <i class="fa fa-twitter"  style='margin-right: 35px;'aria-hidden="true"></i></a>
+			<!-- <i class="fa fa-google-plus" style='margin-right: 35px;'aria-hidden="true"></i>
+			<i class="fa fa-linkedin" style='margin-right: 35px;' aria-hidden="true"></i> -->
+			<i id='contactEmail' class="fa fa-envelope" style='margin-right: 35px;'aria-hidden="true"></i>
+		</div><BR><BR>
+		
+		<div class='aboutText'>
+			<form id="contact_form" action="#" style=' width:100%' method="POST" enctype="multipart/form-data">
+	<div class="row">
+		<input id="contactName" class="input" name="name" type="text" value="" size="30" placeholder='your name' /><br /><br />
+	</div>
+	<div class="row">
+		<input id="contactEmailInput" class="input" name="email" type="text" value="" size="30" placeholder='your email' /><br /><br />
+	</div>
+	<div class="row">
+		<textarea id="contactMessage" class="input" name="message" rows="7" cols="30"></textarea><br />
+	</div>
+	<div id="submit_button"  class='loginBtn' style='width:96%;margin-left: 0px; text-align:center; color:#fff; background-color:#000'> SEND EMAIL</div>
+</form>		</div><BR><BR><BR><BR>
+					
+		</div>	
+	
+	
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+    <div class="addthis_inline_share_toolbox"></div>
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58350df85c6ced57"></script> 
+    
+</body>
+
+<script>
+    //---------------------------------------------------------------
+    // [UTIL] - SET IMAGE PREVIEW
+    //---------------------------------------------------------------
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#ShowImage').attr('src', e.target.result);
+                $('#ShowImage').show();
+                $('#loginAnoIcon').hide();
+            };
+            reader.readAsDataURL(input.files[0]);
+            if (localStorage.getItem('token')){
+	            uploadImage(localStorage.getItem('token'));
+	        }
+        }
+    }
+</script>
+
+</html>

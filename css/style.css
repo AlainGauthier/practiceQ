@@ -1,0 +1,1041 @@
+/*@import url(//fonts.googleapis.com/css?family=Lato:400,700);*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+.at-expanding-share-button[data-position=bottom-right] {
+    bottom: 25% !important;
+}
+
+.addthis_inline_share_toolbox {
+    top: 70%;
+    position: absolute;
+    right: 2%;
+    z-index: 9999;
+}
+
+input {
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+html {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    background-color:#fff;
+}
+
+.tileIcon {
+    font-size: xx-large !important;
+}
+
+body {
+    font: 14px 'Lato', sans-serif;
+    margin: 0px !IMPORTANT;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #336699;
+    text-decoration: underline;
+}
+textarea, select {
+  outline: none;
+}
+#end {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.creator {
+    border-radius: 100px;
+    height: 20px;
+    right: 14px;
+    float: left;
+}
+
+.avatar {
+    border-radius: 100px;
+    height: 42px;
+    right: 14px;
+    position: inherit;
+    margin-top: 4px;
+    margin-bottom: -8px;
+    cursor: pointer;
+}
+
+#question {
+    margin-top: 118px;
+    padding-bottom: 3%;
+    width: 100%;
+    /* height: 100%; */
+    position: relative;
+    float: left;
+    color: #333;
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 84px;
+}
+
+#timer {
+    font-size: 64px;
+    font-weight: bold;
+    /* margin: 0px auto 50px auto; */
+    color: #666;
+    -moz-border-radius: 4px;
+    text-align: center;
+    /* position: relative; */
+    /* line-height: 68px; */
+}
+
+.logout {
+    display: none;
+}
+
+.aboutContainer {
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+    height: 95%;
+    position: absolute;
+    display:none;
+    top: 79px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.social {
+    font-size: x-large;
+    margin-left: 40px;
+    cursor: pointer;
+    color:black;
+}
+
+#contact_form {
+    display: none;
+}
+
+.aboutText input, .aboutText textarea {
+    width: 95%;
+    border: 1px solid #ddd;
+    font-size: large;
+    -webkit-appearance: none;
+    border-radius: 0;
+    PADDING: 15PX;
+}
+
+.aboutTitle {
+    font-size: xx-large;
+    padding: 40px;
+}
+
+.aboutText {
+    font-size: large;
+    margin: 0 40px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.loginContainer, .registerContainer, .anonySettingContainer, .resetPwdContainer {
+    width: 100%;
+    height: 115%;
+    position: absolute;
+    margin-left: 0px;
+    margin: auto;
+    z-index: 999;
+    background-color: white;
+    display: none;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.loginIcons {
+    font-size: x-large;
+    background: BLACK;
+    PADDING: 0.44em;
+    COLOR: #FFF;
+    margin-left: -51px;
+    margin-top: 0px;
+    position: absolute;
+}
+
+.loginBtn {
+    padding: 10px;
+    width: 300px;
+    margin: auto;
+    font-size: x-large;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.login, .register, .anonySetting, .resetPwd, .newPassword, .tokenError {
+    top: 20%;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.register {
+    top: 15%;
+    height: 115%;
+}
+
+#btnResetPwd, #resetMsg, .newPassword, .tokenError {
+    display: none;
+}
+
+.login input, .register input, .resetPwd input, .newPassword input {
+    padding: 10px;
+    width: 300px;
+    font-size: x-large;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.swtichContainer {
+    border: 1px solid #b1b0b0;
+    font-size: x-large;
+    width: 320px;
+    margin: 10px auto;
+    padding: 1px;
+    height: 46px;
+    cursor: pointer;
+}
+
+.switchBtn {
+    text-align: center;
+    width: 142px;
+    ; display: inline;
+    float: left;
+    padding: 9px;
+    color: #b1b0b0;
+}
+
+.switchOn {
+    color: white;
+    background: #8BC34A;
+}
+
+.random {
+    font-size: xx-large;
+    display: inline-block;
+}
+
+.userIconLogin {
+    font-size: 75px;
+    margin-bottom: 25px;
+}
+
+.userIcon {
+    float: right;
+    font-size: xx-large;
+    font-weight: bold;
+    cursor: pointer;
+    width: 50px;
+    display: inline;
+    POSITION: relative;
+    line-height: 48px;
+    z-index: 999;
+    padding-right: 2%;
+    /* display: none; */
+    color: white;
+}
+
+.logo {
+    /*
+   font-size: 25px;
+   letter-spacing: 2px;
+   POSITION: absolute;
+   line-height: 49px;
+   z-index: 10;
+   padding-left: 5px;
+   cursor: pointer;
+   */
+    display: inline;
+}
+
+.logo img {
+    vertical-align: middle;
+}
+
+.toast {
+    width: 100%;
+    position: fixed;
+    height: 40px;
+    bottom: 0px;
+    z-index: 999;
+    text-align: center;
+    display: none;
+}
+
+.success {
+    background-color: #befd74;
+    color: green;
+}
+
+.warning {
+    background-color: #befd74;
+    color: #848408;
+}
+
+.error {
+    background-color: #cc6161;
+    color: #fff;
+}
+
+.header {
+    background-color: #000;
+    padding: 1%;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    min-height: 50PX;
+    vertical-align: middle;
+}
+#searchLink{
+	float:right; 
+	padding: 2% 2% 1% 2%;
+	font-size: x-large;
+	cursor:pointer; 
+}
+#AboutLink{
+	padding: 2% 2% 1% 2%;
+    font-size: x-large;
+	float: left;
+	cursor:pointer;
+	color: black;
+    font-weight: bold;
+     
+}
+#searchIcon {
+    position: fixed;
+    bottom: 25% !important;
+    z-index: 9;
+    background-color: #000;
+    color: #fff;
+    padding: 0.5em 0.6em;
+    font-size: 22px;
+    border-radius: 30px;
+    margin-left: 8px;
+    -webkit-box-shadow: 10px 10px 25px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px -15px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px -15px rgba(0,0,0,0.75);
+    cursor: pointer;
+    z-index: 9;
+}
+
+#searchContainer {
+    position: fixed;
+    top: 79PX;
+    z-index: 9999999;
+    width: 100%;
+    background: black;
+    display: none;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    font-size: x-large;
+    border: 0px;
+    border-bottom: 1px solid;
+    text-align: center;
+    border-radius: 0px !important;
+}
+
+.questions, .backIcon {
+    font-size: xx-large;
+    font-weight: bold;
+    cursor: pointer;
+    width: 50px;
+    display: inline;
+    POSITION: absolute;
+    line-height: 49px;
+    z-index: 10;
+    padding-left: 5px;
+    /*     display: none; */
+}
+
+.backIcon {
+    display: none;
+}
+
+.warning {
+    background: #ffcc66;
+}
+
+.fail {
+    background: #ff9999;
+}
+
+.tip {
+    text-align: center;
+}
+
+.tip strong {
+    margin-right: 5px;
+}
+
+.controls {
+    width: 320px;
+    height: 70px;
+    margin: 50px auto;
+    padding: 5px 15px;
+    background: #f1f1f1;
+    border: 1px #ccc solid;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-shadow: #fff 0 1px 0;
+}
+
+.controls h1 {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.controls .key {
+    float: left;
+    margin-right: 5px;
+    padding: 3px 6px;
+    color: #fff;
+    background: #333;
+    font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+    font-weight: bold;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    text-shadow: #000 0 1px 0;
+}
+
+.controls .act {
+    float: left;
+    margin: 3px 20px 0 0;
+    color: #777;
+    font-size: 12px;
+}
+
+.controls .act:last-child {
+    margin-right: 0;
+}
+
+.endContainer {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9;
+    text-align: center;
+    position: fixed;
+    display: none;
+    padding-top: 10%;
+}
+
+.addQHeader {
+    position: fixed;
+    z-index: 6;
+    width: 100%;
+    background: white;
+    /* 	overflow-x:hidden; */
+}
+
+.createQForm {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: none;
+    position: fixed;
+    z-index: 2;
+    margin-top: 79px;
+    overflow: hidden;
+    padding: 0px;
+    width: 100%;
+}
+
+.addQ {
+    float: right;
+    height: 100%;
+    cursor: pointer;
+    color: #fff;
+    font-size: x-large !important;
+    line-height: 66px !important;
+    z-index: -1;
+    background: green;
+    z-index: 5;
+    width: 9%;
+    text-align: center;
+    display: inline-block;
+}
+
+.like {
+    float: left;
+}
+
+.qCount {
+    float: right;
+    /* margin: 5px; */
+}
+
+.qText {
+    width: 90%;
+    display: inline;
+    font-size: x-large;
+    /* min-height: 50px; */
+    vertical-align: middle;
+    padding: 1%;
+    min-height: 49px;
+    position: absolute;
+    /* float: left; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.addQBloc {
+    line-height: 63px;
+    height: 63px;
+    border-bottom: 1px solid #ddd;
+}
+
+.qTile, #newQSet {
+    width: 200px;
+    height: 248px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin: 20px;
+    display: inline-block;
+}
+
+.qtileFooter {
+    border-top: 1px solid #ddd;
+    padding: 15px;
+    height: 15px;
+}
+
+.qEdit, .qEditN {
+    text-align: center;
+    padding: 15px;
+    background: #000;
+    border-top: 1px solid #ddd;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: large;
+}
+
+.qDisplay {
+    text-align: center;
+    padding: 13px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    letter-spacing: 2px;
+    color: #000;
+    font-size: large;
+    border-bottom: 1px solid #ddd;
+}
+
+.qTileTitle {
+    text-align: center;
+    padding: 10px;
+    font-size: xx-large;
+    height: 135px;
+    /* border-bottom:1px solid #ddd; */
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.newQSet {
+    LETTER-SPACING: 2PX;
+    font-weight: bold;
+    position: relative;
+    padding-top: 36px;
+    height: 111px;
+    BACKGROUND: BLACK;
+    COLOR: #FFF;
+    LINE-HEIGHT: 52PX;
+}
+
+.addQText {
+    width: 85%;
+    font-size: x-large;
+    padding: 2% 2% 0;
+    border-width: 0px;
+    border HEIGHT: 64PX;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    height:auto;
+    overflow-y:hidden;
+}
+
+.qFormInput {
+    padding: 20px;
+    overflow-y: scroll;
+    width: inherit;
+    height: 50%;
+    /* position: relative; */
+    /* background: red; */
+    /* position: static; */
+    margin: 0px;
+    display: block;
+}
+
+.selectTime {
+    font-size: x-large;
+    padding: 2% !important;
+    width: 90%;
+    /* height: 80px; */
+    border-radius: 0px;
+    background-color: white;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    -webkit-appearance: none;
+}
+
+.addQTime {
+    padding: 1%;
+    font-size: x-large;
+    margin-top: 20px;
+    border: none;
+    text-align: center;
+    width: 30%;
+}
+
+.inputQTitle {
+    width: 100%;
+    font-size: x-large;
+    /* padding: 0.7em 0 0.7em 1em; */
+    text-align: center;
+    border: none;
+    height: 64PX;
+    border-bottom: 1px solid #ddd;
+    Z-INDEX: 9999;
+}
+
+.delPopUp {
+    display: none;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    padding-top: 140px;
+}
+
+.btnPopUp {
+    display: inline;
+    padding: 10px 0;
+    font-size: 24px;
+    /* padding-right: 9px; */
+    cursor: pointer;
+}
+
+.popupGrp {
+    width: 295px;
+    margin: auto;
+    position: relative;
+    display: block;
+    HEIGHT: 200PX;
+}
+
+.qGrid {
+    width: 100%;
+    height: 85%;
+    /*     z-index: 3; */
+    background: white;
+    position: absolute;
+    text-align: center;
+    /* padding:20px; */
+    margin-top: 79px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.addAQ {
+    text-align: center;
+    font-size: x-large;
+    background: #8BC34A;
+    color: white;
+    cursor: pointer;
+}
+
+.addAQ:hover {
+    background-color: #rgb(117, 165, 62);
+}
+
+.q {
+    padding: 5px;
+}
+
+.qSetList {
+    position: absolute;
+    z-index: 1;
+    top: 130px;
+    bottom: 48px;
+    /* height: 100%; */
+    left: 0;
+    width: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.qSetListItem {
+    height: 63px;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 105px 0 0 0 ;
+}
+
+#sortable li {
+    font-size: 1.4em;
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+}
+
+#sortable li span {
+    position: absolute;
+    margin-left: -1.3em;
+}
+
+.btnFooter {
+    height: 100px;
+    /* padding: 3% 0; */
+    display: table-cell;
+    text-align: center;
+    width: 49%;
+    height: 100%;
+    vertical-align: middle;
+    line-height: normal;
+    background-color: #FFF;
+    cursor: pointer;
+}
+
+.btnFooter:hover {
+    background-color: #ddd;
+}
+
+.footer {
+    cursor: pointer;
+/*     padding: 10px; */
+    position: fixed;
+    font-size: 12px;
+    letter-spacing: 2px;
+    bottom: 0px;
+    width: 100%;
+    background-color: #FFF;
+    height: 20%;    line-height: 20%;    display: table;    
+    /* z-index: 1; */
+    /* border-top: 1px solid #ddd; */
+}
+
+.editQ {
+    float: right;
+    height: 100%;
+    cursor: pointer;
+    color: #aba7a7;
+    font-size: x-large;
+    z-index: -1;
+    z-index: 5;
+    position: absolute;
+    /* width: 9%; */
+    min-width: 20px;
+    text-align: center;
+    display: inline-flex;
+    height: 100%;
+    line-height: 70px;
+    right: 18px;
+    padding-top: 20px;
+}
+
+.deleteQ {
+    float: right;
+    height: 100%;
+    cursor: pointer;
+    color: #fff;
+    font-size: x-large;
+    z-index: -1;
+    background: red;
+    z-index: 5;
+    width: 9%;
+    min-width: 20px;
+    text-align: center;
+    display: inline;
+    height: 100%;
+    line-height: 54px;
+}
+
+.deleteQSet {
+    padding: 20px;
+    font-size: X-LARGE;
+    TEXT-ALIGN: CENTER;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #FFF;
+    cursor: pointer;
+}
+
+.deleteQSet:hover {
+    background-color: #ddd;
+}
+
+.pg {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.profile {
+    float: right;
+}
+
+.qRun {
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.play {
+    font-size: xx-large;
+    padding-top: 7px;
+    /* color: white; */
+    position: absolute;
+    width: 95%;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+    z-index: 9;
+}
+
+#leftPanel {
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    box-shadow: rgba(142, 142, 142, 0.560784) 4px 5px 9px 0px;
+    z-index: 2;
+    overflow: hidden;
+    margin-top: 79px;
+}
+
+/*.footer a {color: #333; text-decoration: none;}
+.footer a:hover {color: #333; text-decoration: underline;}
+*/
+.egg {
+    position: fixed;
+    width: 420px;
+    height: 315px;
+    margin: -158px 0 0 -210px;
+    padding: 25px;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    border: 2px #ccc solid;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    box-shadow: #ccc 0 0 20px;
+}
+
+#wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 130px;
+    bottom: 48px;
+    left: 0;
+    height: 80%;
+    width: 100%;
+    background: #ccc;
+    overflow: hidden;
+}
+
+#scroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+#scroller ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+
+#scroller li {
+    /* padding: 0px 10px; */
+    height: 50px;
+    /* line-height: 40px; */
+    /* border-bottom: 1px solid #ddd; */
+    /* border-top: 1px solid #fff; */
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.wrong {
+    color: #d41717;
+    background: #f5ecec;
+    padding: 10px;
+    border: 1px solid #d41717 !important;
+}
+
+@media only screen and (max-width: 750px) {
+    #searchContainer {
+        top: 56PX;
+    }
+
+    .qText {
+        font-size: 5vw !important;
+        /* line-height: 66px; */
+        /* 		min-width: 100%; */
+        position: relative;
+        top: 41%;
+        transform: translateY(-19%);
+        /* width: 100px !important; */
+        display: inline-block;
+    }
+
+    #timer {
+        font-size: 43px;
+    }
+
+    .addQText, .createQForm {
+        font-size: x-large;
+    }
+
+    .inputQTitle {
+        font-size: 5vw !important;
+    }
+
+    .tileIcon {
+        display: inline;
+        padding-left: 10px ;
+    }
+
+    .qIcon {
+        display: none;
+    }
+
+    #leftPanel {
+        margin-top: 61px !important;
+    }
+
+    /*#wrapper{
+		top: 135px !important;
+	}*/
+    .editQ {
+        padding-top: 35px;
+    }
+
+    .qSetList {
+        overflow-x: hidden;
+    }
+
+    #question {
+        margin-top: 98px !important;
+        font-size: 40px !important;
+        line-height: initial !important;
+    }
+
+    .qSetListItem {
+        z-index: 1 !important;
+        background: white !important;
+        height: 100px;
+    }
+
+    .deleteQ {
+        position: absolute;
+        right: 0px !important;
+        z-index: -1 !important;
+        width: 20%;
+        line-height: 100px;
+        float: right;
+    }
+
+    .login {
+        top: 15%;
+    }
+
+    .register {
+        top: 10%;
+    }
+
+    #searchIcon {
+        padding: 0.33em 0.48em;
+        font-size: 22px;
+        border-radius: 30px;
+    }
+
+    .aboutText input, .aboutText textarea {
+        width: 90%;
+    }
+    #searchLink{
+	    margin: 3% !important;
+	}
+	#AboutLink{
+	    margin: 3% !important;
+	}
+	.qGrid{
+		 margin-top: 59px;
+	}
+    /* 
+    .userIcon{
+	    padding-right: 11%;
+    }
+    .addthis_inline_share_toolbox {
+  	  	top: 700%;
+    	position: absolute;
+  	 	right: 10px;
+   		z-index: 9999;
+	}
+	
+ */
+    @media only screen and (max-height: 320px) {
+        #timer {
+            font-size: 35px;
+        }
+
+        #question {
+            font-size: 33px !important;
+        }
+    }
+}
